@@ -1,1 +1,31 @@
-.vercel
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Builds
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Test artifacts (mongodb-memory-server unpacks binaries here)
+.mongodb-binaries/
+
+# Vercel / tooling
+.vercel/
+
+# Misc
+*.local
+*.zip
