@@ -59,13 +59,4 @@ async function buildTransactionFilter(userId, filters) {
   return { query, sort: SORTS[filters.sort] || SORTS.date_desc };
 }
 
-function buildDateRangeFilter(userId, filters) {
-  const query = { user: new mongoose.Types.ObjectId(userId), type: 'expense' };
-  if (filters.from) query.date = { $gte: parseDateOnly(filters.from) };
-  if (filters.to) {
-    query.date = { ...(query.date || {}), $lte: endOfUTCDay(parseDateOnly(filters.to)) };
-  }
-  return { query, sort: SORTS[filters.sort] || SORTS.date_desc };
-}
-
-module.exports = { buildTransactionFilter, buildDateRangeFilter };
+module.exports = { buildTransactionFilter };
